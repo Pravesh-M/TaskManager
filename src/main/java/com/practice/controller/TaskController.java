@@ -1,5 +1,6 @@
 package com.practice.controller;
 
+import com.practice.exception.TaskNotFoundException;
 import com.practice.model.Task;
 import com.practice.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class TaskController {
     }
 
     @GetMapping("/{taskId}")
-    public ResponseEntity<Task> getTask(@PathVariable long taskId){
+    public ResponseEntity<Task> getTask(@PathVariable long taskId) throws TaskNotFoundException {
         return new ResponseEntity<>(service.getTask(taskId), HttpStatus.CREATED);
     }
 
@@ -33,7 +34,7 @@ public class TaskController {
     }
 
     @PutMapping("/{taskId}/{isCompleted}")
-    public ResponseEntity<String> updateTask(@PathVariable long taskId, @PathVariable boolean isCompleted) {
+    public ResponseEntity<String> updateTask(@PathVariable long taskId, @PathVariable boolean isCompleted) throws TaskNotFoundException {
         service.updateTask(taskId,isCompleted);
         return new ResponseEntity<>("Task Updated", HttpStatus.OK);
 
