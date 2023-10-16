@@ -25,12 +25,12 @@ public class TaskController {
 
     @GetMapping("/{taskId}")
     public ResponseEntity<Task> getTask(@PathVariable long taskId) throws TaskNotFoundException {
-        return new ResponseEntity<>(service.getTask(taskId), HttpStatus.CREATED);
+        return new ResponseEntity<>(service.getTask(taskId), HttpStatus.FOUND);
     }
 
     @GetMapping("/all")
     public ResponseEntity<List<Task>> getTasks() {
-        return new ResponseEntity<>(service.getTasks(), HttpStatus.CREATED);
+        return new ResponseEntity<>(service.getTasks(), HttpStatus.FOUND);
     }
 
     @PutMapping("/{taskId}/{isCompleted}")
