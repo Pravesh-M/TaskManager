@@ -20,10 +20,10 @@ The Task Manager Spring Boot project is a simple application for managing tasks.
    Alternatively, you can download the project as a ZIP file and extract it.
 
 2. **Import Project**
-3. 
+   
    Open your favorite IDE and import the project as a Maven project.
 
-4. **Run the Application**
+3. **Run the Application**
 
    Run the Spring Boot application using your IDE
    The application will start on http://localhost:8090.
@@ -47,7 +47,7 @@ The Task Manager Spring Boot project is a simple application for managing tasks.
 
   Endpoint: `GET /task/{taskId}`
 
-  - **Get all Tasks**
+- **Get all Tasks**
 
   Endpoint: `GET /task/all`
 
